@@ -34,10 +34,46 @@ public class arreglosVN {
 
     }
 
+    public static int [][] matrizF5(int tamanio,int numI){
+        int[][] matriz=new int [tamanio][tamanio];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = matriz[0].length-1; j >=matriz[0].length-1-i; j--) {
+                matriz[i][j]=numI;
+                numI++;
+            }
+        }
+        return matriz;
+    }
+
+    public static int [][] matrizF11(int tamanho,int numI){
+        int[][] matriz=new int [tamanho][tamanho];
+        for (int f = 0; f < matriz.length; f++) {
+            for (int c = matriz[0].length-1-f; c >=0; c--) {
+                matriz[f][c]=numI;
+                numI++;
+            }
+        }
+        return matriz;
+    }
+    public static int [][] matrizF13(int tamano,int numI){
+        int[][] matriz=new int [tamano][tamano];
+        for (int m = 0; m < matriz.length; m++) {
+            for (int n = 0; n <=matriz[0].length-1-m; n++) {
+                matriz[n][m]=numI;
+                numI++;
+            }
+        }
+        return matriz;
+    }
 
     public static void main(String[] args) {
         meses();
-        int [][] m={{1,2}, {3,4},{5,6}};
+        int [][] m={{1,2,3}, {4,5,6},{7,8,9}};
         imprimirMatriz(m);
+        imprimirMatriz(matrizF5(6,1));
+        System.out.println("");
+        imprimirMatriz(matrizF11(5,1));
+        System.out.println("");
+        imprimirMatriz(matrizF13(5,1));
     }
 }
